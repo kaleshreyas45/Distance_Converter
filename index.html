@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length Converter</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        body{
+            background-color:black;
+        }
+        .meter {
+            width: 300px;
+            height: 36px;
+            border: 2px solid black;
+            border-radius: 5px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .card {   
+            
+            margin: 20px;   
+            color: white;   
+            font-weight: bolder;    
+        }
+        #unit{
+            display: none;
+        }
+        .card-body{  
+            font-size: 23px;
+        }
+        #cm{  
+           background-color: #00b7ff;
+        
+        }
+        #mm{
+            background-color: #00ff87;
+           
+        }
+        #km{
+            background-color: #707069;
+           
+        }
+        #inch{
+            background-color: #fda17f;
+           
+        }
+        #feet{
+            background-color: #c075ff;  
+        }
+        #yard{
+            background-color: lime;
+        }
+
+        .heading {
+            color: #00f3ff;
+            border-radius: 10px;
+            font-weight: bolder;
+           
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="text-center heading">Distance Converter</h1>
+    <center>
+        <div class="container">
+            <form action="#">
+                <input type="number" placeholder="Enter the length(meter)" id="input" class="meter">
+            </form>
+           <div class="all_units" id="unit">
+            <div class="card" >
+                <div class="card-body" id="cm">
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body" id="mm">
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body" id="km">
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body" id="inch">
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body" id="feet">
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body" id="yard">
+
+                </div>
+            </div>
+           </div> 
+            
+        </div>
+
+    </center>
+    <script>
+        //   1 m = 100 cm
+        //   1 m = 1000 mm
+        //   1 m = 0.001 km
+        //   1 m = 39.3701 inch
+        //   1 m = 3.28084 feet
+        //   1 m = 1.09361 yard
+
+        // Declaration
+        let input = document.getElementById('input');
+        cm=document.getElementById('cm')
+        mm=document.getElementById('mm')
+        km=document.getElementById('km')
+        inch=document.getElementById('inch')
+        feet=document.getElementById('feet')
+        yard=document.getElementById('yard')
+        unit=document.getElementById('unit');
+
+        // Event listening
+        
+        input.addEventListener('input', e => {
+            unit.style.display="block";
+
+            cm_value=input.value*100
+            Fcm_value=cm_value.toFixed(5)
+            cm.innerText=`${Fcm_value} cm`;
+
+            mm_value=input.value*1000
+            Fmm_value=mm_value.toFixed(5)
+            mm.innerText=`${Fmm_value} mm`;
+
+            km_value=input.value*0.001
+            Fkm_value=km_value.toFixed(5);
+            km.innerText=`${Fkm_value} km`;
+
+            inch_value=input.value*39.37
+            Finch_value=inch_value.toFixed(5);
+            inch.innerText=`${Finch_value} inch` ;
+
+            feet_value=input.value*3.28
+            Ffeet_value=feet_value.toFixed(5);
+            feet.innerText=`${Ffeet_value} feet`;
+            yard_value=input.value*1.09
+            Fyard_value=yard_value.toFixed(5);
+            yard.innerText=`${Fyard_value} yard`;
+        })
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
